@@ -239,14 +239,7 @@ The API handles errors gracefully:
 - Empty arrays return empty result arrays
 - All exceptions are caught and return valid response structure
 
-## 📄 License
-
-This project is created for educational purposes.
-
 ## 👨‍💻 Author
 
 Update with your details after modifying the constants in `BfhlServiceImpl.java`
 
-## 🤝 Support
-
-For issues or questions, please create an issue in the repository.
