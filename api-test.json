@@ -1,0 +1,117 @@
+{
+  "testCases": [
+    {
+      "name": "Example A - Mixed data with special characters",
+      "request": {
+        "data": ["a", "1", "334", "4", "R", "$"]
+      },
+      "expectedResponse": {
+        "is_success": true,
+        "user_id": "john_doe_17091999",
+        "email": "john@xyz.com",
+        "roll_number": "ABCD123",
+        "odd_numbers": ["1"],
+        "even_numbers": ["334", "4"],
+        "alphabets": ["A", "R"],
+        "special_characters": ["$"],
+        "sum": "339",
+        "concat_string": "Ra"
+      }
+    },
+    {
+      "name": "Example B - Multiple special characters and numbers",
+      "request": {
+        "data": ["2", "a", "y", "4", "&", "-", "*", "5", "92", "b"]
+      },
+      "expectedResponse": {
+        "is_success": true,
+        "user_id": "john_doe_17091999",
+        "email": "john@xyz.com",
+        "roll_number": "ABCD123",
+        "odd_numbers": ["5"],
+        "even_numbers": ["2", "4", "92"],
+        "alphabets": ["A", "Y", "B"],
+        "special_characters": ["&", "-", "*"],
+        "sum": "103",
+        "concat_string": "ByA"
+      }
+    },
+    {
+      "name": "Example C - Only alphabetic strings",
+      "request": {
+        "data": ["A", "ABCD", "DOE"]
+      },
+      "expectedResponse": {
+        "is_success": true,
+        "user_id": "john_doe_17091999",
+        "email": "john@xyz.com",
+        "roll_number": "ABCD123",
+        "odd_numbers": [],
+        "even_numbers": [],
+        "alphabets": ["A", "ABCD", "DOE"],
+        "special_characters": [],
+        "sum": "0",
+        "concat_string": "EoDdCbAa"
+      }
+    },
+    {
+      "name": "Empty data array",
+      "request": {
+        "data": []
+      },
+      "expectedResponse": {
+        "is_success": true,
+        "user_id": "john_doe_17091999",
+        "email": "john@xyz.com",
+        "roll_number": "ABCD123",
+        "odd_numbers": [],
+        "even_numbers": [],
+        "alphabets": [],
+        "special_characters": [],
+        "sum": "0",
+        "concat_string": ""
+      }
+    },
+    {
+      "name": "Only numbers",
+      "request": {
+        "data": ["10", "25", "100", "3"]
+      },
+      "expectedResponse": {
+        "is_success": true,
+        "user_id": "john_doe_17091999",
+        "email": "john@xyz.com",
+        "roll_number": "ABCD123",
+        "odd_numbers": ["25", "3"],
+        "even_numbers": ["10", "100"],
+        "alphabets": [],
+        "special_characters": [],
+        "sum": "138",
+        "concat_string": ""
+      }
+    },
+    {
+      "name": "Only special characters",
+      "request": {
+        "data": ["@", "#", "$", "%", "&"]
+      },
+      "expectedResponse": {
+        "is_success": true,
+        "user_id": "john_doe_17091999",
+        "email": "john@xyz.com",
+        "roll_number": "ABCD123",
+        "odd_numbers": [],
+        "even_numbers": [],
+        "alphabets": [],
+        "special_characters": ["@", "#", "$", "%", "&"],
+        "sum": "0",
+        "concat_string": ""
+      }
+    }
+  ],
+  "howToTest": {
+    "curl": "curl -X POST http://localhost:8080/bfhl -H 'Content-Type: application/json' -d '{\"data\": [\"a\", \"1\", \"334\", \"4\", \"R\", \"$\"]}'",
+    "postman": "Import this JSON file into Postman and use the request bodies from testCases",
+    "production": "Replace localhost:8080 with your deployed URL on Render"
+  }
+}
