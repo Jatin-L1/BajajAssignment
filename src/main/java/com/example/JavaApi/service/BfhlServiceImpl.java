@@ -11,8 +11,9 @@ import java.util.List;
 public class BfhlServiceImpl implements BfhlService {
 
 
-    private static final String FULL_NAME = "Jatin Sharma";
-    private static final String DOB = "01012006";
+    // User details - IMPORTANT: Full name must be lowercase with underscores
+    private static final String FULL_NAME = "jatin_sharma";  // lowercase with underscores (e.g., "john_doe")
+    private static final String DOB = "01012006";            // ddmmyyyy format
     private static final String EMAIL = "jatin2026.be23@chitkara.edu.in";
     private static final String ROLL_NUMBER = "2310992026";
 
